@@ -11,6 +11,7 @@ declare global {
 export const isAuthenticated = async (req:Request,res:Response,next:NextFunction)=>{
     try{
         const token = req.cookies.token;
+        console.log(token)
         if(!token){
             res.status(400).json({success:false,message:"User not authenticated"});
             return;

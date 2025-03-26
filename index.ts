@@ -24,5 +24,5 @@ app.use("/user",userRouter);
 app.use("/message",messageRouter);
 server.listen(port , ()=> {
     connectDb();
-    console.log("listening to the port")
+    console.log("listening to the port $port")
 })
