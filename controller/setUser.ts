@@ -16,7 +16,8 @@ export const addUser =async (req:Request, res:Response):Promise<void>=>{
         res.cookie("token", name, {
             httpOnly: true,   // Prevents client-side JavaScript access
             secure: true,     // Ensures the cookie is sent only over HTTPS (set `false` for local dev)
-            sameSite: "lax",  // Protects against CSRF attacks
+            sameSite: "none",
+            path:'/',  // Protects against CSRF attacks
             maxAge: 90*24 * 60 * 60 * 1000, // Expires in 24 hours
         });
         res.status(200).json({success:true, message:"Successfully created"})
