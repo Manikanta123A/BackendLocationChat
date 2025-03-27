@@ -14,7 +14,7 @@ const port = process.env.port || 5000;
 app.use(cookieparser())
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: ["http://localhost:5173", "https://traveltogeorgia.onrender.com"] ,// Replace with your frontend URL
     credentials: true, // Allow cookies
 }));
 
